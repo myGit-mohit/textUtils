@@ -1,0 +1,46 @@
+1. / in the navbar to # and Link to <a> and to --> href
+
+<ul className="navbar-nav me-auto mb-2 mb-lg-0">
+      <li className="nav-item">
+        <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link" to ="/About">{props.aboutText}</Link>
+      </li>
+
+2. In app. JS-->
+ import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+
+3. remove router dom elements from app.js. Previous code is here.
+
+
+
+   <>
+   <Router>
+  <Navbar title="textUtils" aboutText="About Us" mode={mode} changeMode={changeMode} />
+ <Alert alert={alert}/>
+
+
+  <div class="container my-3" >
+  
+  {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Routes>
+          <Route path="/About" element={<About />}>
+           </Route >
+          <Route path ="/" element={<TextArea heading="Enter the text here" mode= {mode} showAlert={showAlert} />}>
+ 
+          </Route>
+        </Routes>
+ 
+{/* <About/> */}
+  </div>
+  </Router>
+  </>
+
+4. 
